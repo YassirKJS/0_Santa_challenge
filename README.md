@@ -15,3 +15,9 @@ For example:
     ))) and )())()) both result in floor -3.
 
 To what floor do the instructions take Santa?
+
+# Thoughts
+
+- read instruction.txt file
+- find number of occurences of each parenthesis
+- do a substraction
