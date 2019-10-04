@@ -21,13 +21,13 @@ const PartOne = () => {
 
 const PartOne_2 = () => {
   fs.readFile('./instructions.txt', (err, data) => {
-    console.time('solution-time')
+    console.time('solution-time');
   
     instructions = data.toString().split('');
 
     floor = instructions.reduce((counter, instruction) => {
-      if (instruction = '(') counter += 1;
-      else if (instruction = ')') counter -= 1;
+      if (instruction = '(') return counter += 1;
+      else if (instruction = ')') return counter -= 1;
     }, 0)
     
     console.timeEnd('solution-time');
@@ -35,7 +35,29 @@ const PartOne_2 = () => {
   });
 } 
 
-PartOne(); // .573ms
-PartOne_2(); //.311ms
+// PartOne(); // .573ms
+// PartOne_2(); //.455ms
 
+const PartTwo = () => {
+  fs.readFile('./instructions.txt', (err, data) => {
+    console.time('solution-time');
 
+    instructions = data.toString().split('');
+
+    for (let i = 0; i < instructions.length; i++) {
+      if (floor > -1) {        
+        if (instructions[i] === '(') floor += 1;
+        else if (instructions[i] === ')') floor -= 1;
+      }
+      else {
+        console.log('basement', i);
+        break;
+      }
+    }
+
+    console.log('end floor', floor);
+    console.timeEnd('solution-time');
+  });
+}
+
+PartTwo(); // 2.053ms
