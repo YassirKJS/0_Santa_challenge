@@ -4,7 +4,7 @@
   "description": "Santa is trying to deliver presents in a large apartment building, but he can't find the right floor - the directions he got are a little confusing. He starts on the ground floor (floor 0) and then follows the instructions one character at a time.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "nodemon"
   },
   "repository": {
     "type": "git",
@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/YassirKJS/0_Santa_challenge/issues"
   },
-  "homepage": "https://github.com/YassirKJS/0_Santa_challenge#readme"
+  "homepage": "https://github.com/YassirKJS/0_Santa_challenge#readme",
+  "devDependencies": {
+    "nodemon": "^1.19.3"
+  }
 }
