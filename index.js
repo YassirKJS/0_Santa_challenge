@@ -60,4 +60,25 @@ const PartTwo = () => {
   });
 }
 
-PartTwo(); // 2.053ms
+const PartTwo_2 = () => {
+  fs.readFile('./instructions.txt', (err, data) => {
+    console.time('solution-time');
+
+    instructions = data.toString().split('');
+
+    let counter = 0;
+    const basementPos = instructions.some((instruction) => {
+      if (instruction === '(') floor += 1;
+      else if (instruction === ')') floor -= 1;
+      counter++;
+      return floor < 0;
+    })
+
+    console.log('end floor', floor);
+    console.timeEnd('solution-time');
+  });
+}
+
+// PartTwo(); // 2.053ms
+PartTwo_2(); // 1.934ms
+
